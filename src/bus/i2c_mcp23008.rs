@@ -77,22 +77,22 @@ impl<I2C: Write> DataBus for I2CMCP23008Bus<I2C> {
         let pins = rs | backlight | (upper_nibble << 3);
         self.set_pins(pins)?;
 
-        delay.delay_ms(2);
+        delay.delay_ms(1);
 
         let pins = rs | en | backlight | (upper_nibble << 3);
         self.set_pins(pins)?;
 
-        delay.delay_ms(2);
+        delay.delay_ms(1);
 
         let pins = rs | backlight | (lower_nibble << 3);
         self.set_pins(pins)?;
 
-        delay.delay_ms(2);
+        delay.delay_ms(1);
 
         let pins = rs | en | backlight | (lower_nibble << 3);
         self.set_pins(pins)?;
 
-        delay.delay_ms(2);
+        delay.delay_ms(1);
 
         let pins = backlight | (lower_nibble << 3);
         self.set_pins(pins)?;
